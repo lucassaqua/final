@@ -2,8 +2,6 @@
 # Para terminar o programa, pressione a tecla 'escape'
 
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.backend_bases import MouseButton
 
 centroX = 0
 centroY = 0
@@ -13,16 +11,14 @@ theta = 0
 
 end_loop = False
 
-# Função que gerencia eventos do mouse
 def on_press(event):
-    print('Você pressionou o botão do mouse:', event.button, event.xdata, event.ydata)
+    print('Você pressionou o botão do mouse: ', event.button, event.xdata, event.ydata)
     global centroX
     global centroY
     
     centroX = round(event.xdata, 2)
     centroY = round(event.ydata, 2)   
 
-# Função que gerencia eventos do teclado
 def on_key(event):
     global end_loop
     global escala
@@ -46,7 +42,7 @@ def matriz_rotacao(thetaRadianos):
     global rotacao      
     rotacao = np.matmul( np.array([[np.cos(thetaRadianos) , -np.sin(thetaRadianos), 0]
                                     , [np.sin(thetaRadianos) , np.cos(thetaRadianos), 0]
-                                    , [0,0,1]]) , rotacao)
+                                    , [0 ,0 , 1]]), rotacao)
 
 def matriz_escala(escala):
     return np.array([[escala, 0, 0],
