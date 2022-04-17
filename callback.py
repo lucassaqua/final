@@ -1,6 +1,6 @@
 # Exemplos de call-backs do Matplotlib para a interação com o usuário
 # Para terminar o programa, pressione a tecla 'escape'
-
+ 
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backend_bases import MouseButton
